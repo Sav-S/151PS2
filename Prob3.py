@@ -1,7 +1,7 @@
 #######################################
 # Name:Savanna Starks
 # Collaborators:
-# Estimated time spent (hr):1
+# Estimated time spent (hr): 2 
 #######################################
 
 from pgl import GWindow, GRect, GOval, GLine, GLabel
@@ -15,6 +15,7 @@ gw = GWindow(WIDTH, HEIGHT)
 
 # And you can take it from here! I'm excited to see what you create
 gw = GWindow(450,500)
+
 """the sky"""
 #upper sky
 upper_sky = GRect(0, 0, 450, 500)
@@ -36,12 +37,11 @@ bottom_sky = GRect(0, 350, 450, 300)
 bottom_sky.set_color("blue")
 bottom_sky.set_filled(True)
 gw.add(bottom_sky)
-
-"""the stars
-#base formula
+        
+"""#base formula
 base_star = GOval(10, 15, 3, 3)
 base_star.set_color("lightcyan")
-base_star.set_filled(True)xs
+base_star.set_filled(True)
 gw.add(base_star)"""
 
 """the moon"""
@@ -108,5 +108,15 @@ lamp_shade.set_color("color.darkgray")
 lamp_shade.set_filled(True)
 gw.add(lamp_shade)
 
+title = GLabel("skateboard in streetlight.", 50, 75)
+title.set_font("bold 24px 'times new roman'")
+title.set_color("ghostwhite")
+gw.add(title)
 
-
+for w in range (0, 450):
+    for h in range(0, 3):
+        star = GOval(10 * w, 2 * h, 2, 2)
+        if (h+w) % 3 != 5:
+            star.set_color("lightcyan")
+            star.set_filled(True)
+    gw.add(star)
